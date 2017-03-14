@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.hello.study.MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND BROADCAT" />
+
+    <Button
+        android:id="@+id/button_svae_to_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE TO FILE" />
+
+    <Button
+        android:id="@+id/button_svae_to_perefences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE TO PREFERENCES" />
+
+    <Button
+        android:id="@+id/button_svae_to_sqlite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE TO SQLITE" />
+
+    <Button
+        android:id="@+id/button_open_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OPEN CONTACTS" />
+
+    <Button
+        android:id="@+id/button_send_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND NOTICE" />
+
+    <Button
+        android:id="@+id/button_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OPEN CAMERA" />
+
+    <Button
+        android:id="@+id/button_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OPEN WEBVIEW" />
+
+    <Button
+        android:id="@+id/button_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONSUME JSON" />
+
+    <Button
+        android:id="@+id/button_gps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONSUME GPS" />
+
+    <Button
+        android:id="@+id/button_factor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET FACTORES" />
+
+    <Button
+        android:id="@+id/button_jpush"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JPUSH TEST" />
+
+</LinearLayout>

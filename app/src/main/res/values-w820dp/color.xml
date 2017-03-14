@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <color name="gray_normal">#666667</color>
+    <color name="light_black">#333</color>
+    <color name="black">#000</color>
+    <color name="gray_lin">#F00</color>
+    <color name="holo_red_light">#ffff4444</color>
+    <color name="touming">#0000</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+    <color name="green">#2d8931</color>
+    <color name="greenlight">#49781c</color>
+    <color name="gray">#6699ff</color>
+    <color name="white">#fff</color>
+    <color name="selected">#e8a14c</color>
+    <color name="select">#fdae51</color>
+    <color name="light_gray">#eee</color>
+    <color name="bg">#efe8e3</color>
+    <color name="func_first0">#FF8F68B4</color>
+    <color name="func_zhishi0">#FF9BCA64</color>
+    <color name="func_zhishi1">#339BCA64</color>
+    <color name="func_caidan0">#FF0076a3</color>
+    <color name="func_caidan1">#330076a3</color>
+    <color name="func_fenlei0">#FFbcb556</color>
+    <color name="func_fenlei1">#33bcb556</color>
+    <color name="func_xiaochi0">#FF4bb0c8</color>
+    <color name="func_xiaochi1">#334bb0c8</color>
+    <color name="func_first1">#338F68B4</color>
+    <color name="title_bg">#ff29a67e</color>
+    <color name="rdo_press">#a029a67e</color>
+    <color name="rdo_normal">#ff29a67e</color>
+    <color name="vat_title">#ff41a4ce</color>
+    <color name="vat_content">#ff1d4058</color>
+    <color name="titlebg">#0198cd</color>
+    <color name="lttitlebg">#01afcd</color>
+    <color name="air_you">#79b800</color>
+    <color name="air_liang">#e0e0e0</color>
+    <color name="air_qing">#c67901</color>
+    <color name="air_zhong0">#eb111b</color>
+    <color name="air_zhong1">#b3065b</color>
+    <color name="air_yan">#600202</color>
+    <color name="guanli1">#298cc5</color>
+    <color name="guanli2">#549e95</color>
+    <color name="guanli3">#84bf41</color>
+    <color name="guanli4">#e3a92e</color>
+    <color name="guanli5">#dc6a48</color>
+    <color name="guanli_shenhe_back">#c5eaa7</color>
+    <color name="tongji_back">#f3f3f3</color>
+    <color name="tongji_cx_result">#f2eee2</color>
+    <color name="menu_select_text">#ffa800</color>
+	<color name="viewfinder_mask">#60000000</color>
+	<color name="result_view">#b0000000</color>
+    <color name="lightgreen">#99CC33</color>
+    <color name="loginback">#0198cd</color>
+    <color name="loginback_bottom">#f0f0f0</color>
+    <color name="data_timecolor">#6d6d6d</color>
+    <color name="date_1">#F24949</color>
+    <color name="date_2">#40000000</color>
+    
+    
+</resources>

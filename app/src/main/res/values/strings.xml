@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">study</string>
+
+    <string name="control">控制</string>
+    <string name="pics">图片管理</string>
+    <string name="but_start">开始</string>
+    <string name="but_up">向上</string>
+    <string name="but_down">向下</string>
+    <string name="but_left">向左</string>
+    <string name="but_right">向右</string>
+
+    <string name="but_up_left">上左</string>
+    <string name="but_up_right">上右</string>
+    <string name="but_down_left">下左</string>
+    <string name="but_down_right">下右</string>
+    <string name="but_amplification">放大</string>
+    <string name="but_shrink">缩小</string>
+    <string name="but_capture">抓图</string>
+    <string name="menu1">视频预览</string>
+    <string name="menu2">智能温室</string>
+    <string name="menu3">扫一扫</string>
+    <string name="menu4">数据监测</string>
+    <string name="menu5">系统配置</string>
+    <string name="menu6">返回主页</string>
+    <string name="deviceName">珠海1</string>
+    <string name="appScan">扫一扫</string>
+    <string name="main_user">设置</string>
+    <string name="set_ip">修改密码</string>
+    <string name="userName">账号</string>
+    <string name="password">密码</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="TRTest">在线视频</string>
+    <string name="TRKnowledge">数据监测</string>
+    <string name="TRIntroduce">忘记密码？</string>
+    <string name="TRSelf">忘记密码？</string>
+    <string name="caiji_time">采集时间：</string>
+    <string name="caiji_time1">2015-02-14 11:20</string>
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="updated_at">上次更新于%1$s前</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新…</string>
+    <string name="not_updated_yet">暂未更新过</string>
+    <string name="time_error">时间有问题</string>
+    <string name="updated_just_now">刚刚更新</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_factor">FactorActivity</string>
+
+</resources>
