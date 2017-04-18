@@ -1,51 +1,72 @@
 package com.example.hello.study.util;
 
-import com.example.hello.study.util.HttpCallbackListener;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpUtil {
 
-    public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                HttpURLConnection connection = null;
-                try {
-                    URL url = new URL(address);
-                    connection = (HttpURLConnection) url.openConnection();
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(8000);
-                    connection.setReadTimeout(8000);
-                    connection.setDoInput(true);
-                    connection.setDoOutput(true);
-                    InputStream in = connection.getInputStream();
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-                    StringBuilder response = new StringBuilder();
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        response.append(line);
-                    }
-                    if (listener != null) {
-                        // 回调onFinish()方法
-                        listener.onFinish(response.toString());
-                    }
-                } catch (Exception e) {
-                    if (listener != null) {
-                        // 回调onError()方法
-                        listener.onError(e);
-                    }
-                } finally {
-                    if (connection != null) {
-                        connection.disconnect();
-                    }
-                }
-            }
-        }).start();
-    }
+	public static final String TAG = "HttpUtil";
 
+	public static String httpRequest(String requestUrl, String requestMethod, String outputStr) {
+
+		String result = null;
+		StringBuffer buffer = new StringBuffer();
+		try {
+			URL url = new URL(requestUrl);
+			HttpURLConnection httpUrlConn = (HttpURLConnection) url.openConnection();
+
+			httpUrlConn.setDoOutput(true);
+			httpUrlConn.setDoInput(true);
+			httpUrlConn.setUseCaches(false);
+
+			httpUrlConn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+			httpUrlConn.setRequestProperty("Accept", "application/json");
+
+			// 设置请求方式（GET/POST）
+			httpUrlConn.setRequestMethod(requestMethod);
+
+			if ("GET".equalsIgnoreCase(requestMethod))
+				httpUrlConn.connect();
+
+			// 当有数据需要提交时
+			if (null != outputStr) {
+				OutputStream outputStream = httpUrlConn.getOutputStream();
+
+				// 注意编码格式，防止中文乱码
+				outputStream.write(outputStr.getBytes("UTF-8"));
+				outputStream.close();
+			}
+
+			// 将返回的输入流转换成字符串
+			InputStream inputStream = httpUrlConn.getInputStream();
+			InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+			BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+			String str = null;
+			while ((str = bufferedReader.readLine()) != null) {
+				buffer.append(str);
+			}
+			bufferedReader.close();
+			inputStreamReader.close();
+
+			// 释放资源
+			inputStream.close();
+			inputStream = null;
+			httpUrlConn.disconnect();
+			result = buffer.toString();
+		} catch (ConnectException ce) {
+			Log.e(TAG, "Weixin server connection timed out.");
+		} catch (Exception e) {
+			Log.e(TAG, "https request error:{}", e);
+		}
+
+		return result;
+	}
 }

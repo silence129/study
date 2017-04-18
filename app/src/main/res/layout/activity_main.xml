@@ -79,4 +79,10 @@
         android:layout_height="wrap_content"
         android:text="JPUSH TEST" />
 
+    <Button
+        android:id="@+id/button_okhttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OKHTTP TEST" />
+
 </LinearLayout>

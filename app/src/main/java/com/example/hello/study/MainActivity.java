@@ -20,6 +20,7 @@ import com.example.hello.study.activity.FullscreenActivity;
 import com.example.hello.study.activity.GpsActivity;
 import com.example.hello.study.activity.JPushActivity;
 import com.example.hello.study.activity.JsonActivity;
+import com.example.hello.study.activity.OkhttpActivity;
 import com.example.hello.study.activity.WebviewActivity;
 import com.example.hello.study.util.DbHelper;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button button_gps;
     Button button_factor;
     Button button_jpush;
+    Button button_okhttp;
 
     DbHelper dbHelper;
 
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_gps = (Button)findViewById(R.id.button_gps);
         button_factor = (Button)findViewById(R.id.button_factor);
         button_jpush = (Button)findViewById(R.id.button_jpush);
+        button_okhttp = (Button)findViewById(R.id.button_okhttp);
 
         button.setOnClickListener(this);
         button_save_to_file.setOnClickListener(this);
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_gps.setOnClickListener(this);
         button_factor.setOnClickListener(this);
         button_jpush.setOnClickListener(this);
+        button_okhttp.setOnClickListener(this);
     }
 
     @Override
@@ -85,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
 
+            case R.id.button_okhttp:
+                OkhttpActivity.startActivity(this);
+                break;
             case R.id.button_jpush:
                 JPushActivity.startActivity(this);
                 break;

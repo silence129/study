@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.hello.study.R;
 import com.example.hello.study.model.VgomcPostData;
 import com.example.hello.study.model.VgomcPostDataValue;
+import com.example.hello.study.util.HttpUtil;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -84,13 +85,64 @@ public class OkhttpActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
 
             case R.id.button_okhttp_vgomc:
-                vgomcPost("http://192.168.16.40:8081/api/v1/vgomc-data");
+                vgomcPost("http://sq.vgomc.com:8081/api/v1/vgomc-data");
                 break;
 
             case R.id.button_okhttp_vgomc_raw:
-                vgomcPost("http://192.168.16.40:8081/api/v1/raw");
+                vgomcPost2("http://sq.vgomc.com:8081/api/v1/raw");
                 break;
         }
+    }
+
+    protected void vgomcPost2(final String url) {
+
+        VgomcPostDataValue v = new VgomcPostDataValue();
+        v.setChannelId("channlId");
+        v.setValue("23.22");
+        v.setFormatValue(v.getValue());
+        v.setVarDate("2011-11-22 22:11:01");
+        v.setVarId("varId");
+        v.setVarName("空气温度实时值");
+        v.setVarUnit("温度");
+
+        VgomcPostData data = new VgomcPostData();
+        data.setCompanyName("拓易知");
+        data.setDeviceId("deviceId");
+        data.setDeviceName("deviceName");
+        data.setDevicePointx("pointx");
+        data.setDevicePointy("pointy");
+
+        List<VgomcPostDataValue> values = new ArrayList<>();
+        values.add(v);
+        data.setDataValues(values);
+
+        Gson gson = new Gson();
+        final String jsonString = gson.toJson(data);
+
+        Log.i(TAG, jsonString);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Message message = new Message();
+                message.what = TOAST;
+                String log = jsonString;
+
+                try {
+
+                    String responseValue = HttpUtil.httpRequest(url,"POST",jsonString);
+                    log = "response :" + responseValue;
+                    Log.i(TAG, log);
+
+                } catch (Exception e) {
+                    log = e.toString();
+                }
+
+                message.obj = log;
+                handler.sendMessage(message);
+            }
+        }).start();
     }
 
     protected void vgomcPost(final String url) {
@@ -103,11 +155,11 @@ public class OkhttpActivity extends AppCompatActivity implements View.OnClickLis
         v.setFormatValue(v.getValue());
         v.setVarDate("2011-11-22 22:11:01");
         v.setVarId("varId");
-        v.setVarName("varName");
-        v.setVarUnit("varUnit");
+        v.setVarName("空气温度实时值");
+        v.setVarUnit("温度");
 
         VgomcPostData data = new VgomcPostData();
-        data.setCompanyName("test company");
+        data.setCompanyName("拓易知");
         data.setDeviceId("deviceId");
         data.setDeviceName("deviceName");
         data.setDevicePointx("pointx");
