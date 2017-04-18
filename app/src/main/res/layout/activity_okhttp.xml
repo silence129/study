@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_okhttp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.hello.study.activity.OkhttpActivity">
+
+    <Button
+        android:id="@+id/button_okhttp_vgomc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND VGOMC TEST" />
+
+    <Button
+        android:id="@+id/button_okhttp_vgomc_raw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND VGOMC RAW" />
+
+</LinearLayout>
