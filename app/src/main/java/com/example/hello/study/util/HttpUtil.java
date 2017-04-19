@@ -26,8 +26,8 @@ public class HttpUtil {
 			httpUrlConn.setDoInput(true);
 			httpUrlConn.setUseCaches(false);
 
-			httpUrlConn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			httpUrlConn.setRequestProperty("Accept", "application/json");
+			//httpUrlConn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+			//httpUrlConn.setRequestProperty("Accept", "application/json");
 
 			// 设置请求方式（GET/POST）
 			httpUrlConn.setRequestMethod(requestMethod);
@@ -62,7 +62,7 @@ public class HttpUtil {
 			httpUrlConn.disconnect();
 			result = buffer.toString();
 		} catch (ConnectException ce) {
-			Log.e(TAG, "Weixin server connection timed out.");
+			Log.e(TAG, "server connection timed out.");
 		} catch (Exception e) {
 			Log.e(TAG, "https request error:{}", e);
 		}

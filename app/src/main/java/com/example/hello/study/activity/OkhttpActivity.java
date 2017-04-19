@@ -89,7 +89,7 @@ public class OkhttpActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.button_okhttp_vgomc_raw:
-                vgomcPost2("http://sq.vgomc.com:8081/api/v1/raw");
+                vgomcPost2("http://sq.vgomc.com:8081/api/v1/vgomc-data");
                 break;
         }
     }
